@@ -69,8 +69,18 @@ namespace BDO_Helper
 
             switch (comboBoxClass.SelectedItem)
             {
-                case "Nova Succession":
+                case "Nova Succession PvE 1":
                     comboForm = new ComboForm("Shift+F > Shift+LMB > Shift+RMB > Shift+E > ↑+C > ↓+RMB > Shift+C");
+                    comboForm.Show();
+                    break;
+
+                case "Nova Succession PvE 2":
+                    comboForm = new ComboForm("Shift+LMB > Shift+RMB > Shift+E > ↑+C > ↓+RMB > ↓+LMB > Shift+C");
+                    comboForm.Show();
+                    break;
+
+                case "Nova Succession PvP":
+                    comboForm = new ComboForm("W+E > Shift+S > Shift+F > W+RMB > Shift+LMB > Shift+RMB > W+F > Shift+Q");
                     comboForm.Show();
                     break;
 
@@ -86,7 +96,7 @@ namespace BDO_Helper
 
                 case "Ninja Awakening":
                     comboForm = new ComboForm("↓+E > Shift+LMB > Space > Shift+F > Reposition > (Shift+LMB) > " +
-                        "↓+F > F > Shift+RMB > Shift+LMB > Reposition > Blade Spin > Q > Shift+LMB > →+LMB > " +
+                        "↓+F > F > Shift+RMB > Shift+LMB > Reposition > [Blade Spin] > Q > Shift+LMB > →+LMB > " +
                         "LMB+RMB > LMB+RMB > ↓+E > Space > Shift+RMB > Shift+Space");
                     comboForm.Show();
                     break;

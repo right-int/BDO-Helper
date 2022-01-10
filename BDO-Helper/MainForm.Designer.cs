@@ -229,7 +229,9 @@
             this.comboBoxClass.Items.AddRange(new object[] {
             "Sorceress Succession",
             "Sorceress Awakening",
-            "Nova Succession",
+            "Nova Succession PvE 1",
+            "Nova Succession PvE 2",
+            "Nova Succession PvP",
             "Nova Awakening",
             "Ninja Succession",
             "Ninja Awakening",
