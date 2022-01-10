@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace BDO_Helper
@@ -68,6 +69,11 @@ namespace BDO_Helper
 
             switch (comboBoxClass.SelectedItem)
             {
+                case "Nova Succession":
+                    comboForm = new ComboForm("Shift+F > Shift+LMB > Shift+RMB > Shift+E > ↑+C > ↓+RMB > Shift+C");
+                    comboForm.Show();
+                    break;
+
                 case "Nova Awakening":
                     comboForm = new ComboForm("F > ↓+LMB > ↓+F > ↓+Q > F > ↑+F > Shift+RMB > Shift+LMB > Q > F");
                     comboForm.Show();
@@ -82,6 +88,11 @@ namespace BDO_Helper
                     comboForm = new ComboForm("↓+E > Shift+LMB > Space > Shift+F > Reposition > (Shift+LMB) > " +
                         "↓+F > F > Shift+RMB > Shift+LMB > Reposition > Blade Spin > Q > Shift+LMB > →+LMB > " +
                         "LMB+RMB > LMB+RMB > ↓+E > Space > Shift+RMB > Shift+Space");
+                    comboForm.Show();
+                    break;
+
+                case "Sage Awakening":
+                    comboForm = new ComboForm("↓+RMB > RMB > ↑+F > Space > RMB > F > ↓+LMB > F > RMB > ↑+F > Shift+RMB > ↑+RMB > RMB > F");
                     comboForm.Show();
                     break;
 
@@ -186,9 +197,12 @@ namespace BDO_Helper
         {
             manager = await UpdateManager.GitHubUpdateManager(@"https://github.com/right-int/BDO-Helper");
 
-            labelVersion.Text = manager.CurrentlyInstalledVersion().ToString();
+            labelVersion.Text = "v" + manager.CurrentlyInstalledVersion().ToString();
 
             CheckForUpdates();
+
+            timerCheckForUpdates.Interval = 5000;
+            timerCheckForUpdates.Start();
         }
 
         private void timerCheckForUpdates_Tick(object sender, EventArgs e)
@@ -210,8 +224,7 @@ namespace BDO_Helper
 
                 MessageBox.Show("Successfully Updated! Restarting...");
 
-                Process.Start(Application.ExecutablePath);
-                Application.Exit();
+                Application.Restart();
             }
         }
     }

@@ -66,6 +66,7 @@
             // 
             // siticonePanelSide
             // 
+            this.siticonePanelSide.Controls.Add(this.labelVersion);
             this.siticonePanelSide.Controls.Add(this.siticoneButton2);
             this.siticonePanelSide.Controls.Add(this.siticoneButtonCombo);
             this.siticonePanelSide.Controls.Add(this.siticonePictureBox1);
@@ -130,7 +131,6 @@
             // 
             // siticonePanelTop
             // 
-            this.siticonePanelTop.Controls.Add(this.labelVersion);
             this.siticonePanelTop.Controls.Add(this.siticoneControlBoxMinimize);
             this.siticonePanelTop.Controls.Add(this.siticoneControlBoxClose);
             this.siticonePanelTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -146,11 +146,11 @@
             this.labelVersion.AutoSize = true;
             this.labelVersion.BackColor = System.Drawing.Color.Transparent;
             this.labelVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVersion.Location = new System.Drawing.Point(273, 22);
+            this.labelVersion.Location = new System.Drawing.Point(12, 421);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(44, 20);
+            this.labelVersion.Size = new System.Drawing.Size(51, 20);
             this.labelVersion.TabIndex = 1;
-            this.labelVersion.Text = "0.0.0";
+            this.labelVersion.Text = "v0.0.0";
             // 
             // siticoneControlBoxMinimize
             // 
@@ -224,6 +224,7 @@
             // 
             // comboBoxClass
             // 
+            this.comboBoxClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxClass.FormattingEnabled = true;
             this.comboBoxClass.Items.AddRange(new object[] {
             "Sorceress Succession",
@@ -231,7 +232,9 @@
             "Nova Succession",
             "Nova Awakening",
             "Ninja Succession",
-            "Ninja Awakening"});
+            "Ninja Awakening",
+            "Sage Succession",
+            "Sage Awakening"});
             this.comboBoxClass.Location = new System.Drawing.Point(204, 51);
             this.comboBoxClass.Name = "comboBoxClass";
             this.comboBoxClass.Size = new System.Drawing.Size(180, 21);
@@ -265,8 +268,7 @@
             // 
             // timerCheckForUpdates
             // 
-            this.timerCheckForUpdates.Enabled = true;
-            this.timerCheckForUpdates.Interval = 1000;
+            this.timerCheckForUpdates.Interval = 5000;
             this.timerCheckForUpdates.Tick += new System.EventHandler(this.timerCheckForUpdates_Tick);
             // 
             // MainForm
@@ -286,8 +288,8 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.siticonePanelSide.ResumeLayout(false);
+            this.siticonePanelSide.PerformLayout();
             this.siticonePanelTop.ResumeLayout(false);
-            this.siticonePanelTop.PerformLayout();
             this.siticonePanelCombo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFontSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.siticonePictureBox1)).EndInit();
